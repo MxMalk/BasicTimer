@@ -98,15 +98,22 @@ internal class TimeTracker
             TimeNow = DateTime.Now;
     }
 
+
+    public bool showSeconds = true;
+    public bool showMilliseconds = true;
     public override string ToString()
     {
         StringBuilder sb = new();
+
         if (TimeOnClock.TotalSeconds < 0)
             sb.Append($"-");
-        sb.Append($"{Math.Abs(TimeOnClock.Hours):00}:");
-        sb.Append($"{Math.Abs(TimeOnClock.Minutes):00}:");
-        sb.Append($"{Math.Abs(TimeOnClock.Seconds):00}.");
-        sb.Append($"{Math.Abs(TimeOnClock.Milliseconds / 10):00}");
+        sb.Append($"{Math.Abs(TimeOnClock.Hours):00}");
+        sb.Append($":{Math.Abs(TimeOnClock.Minutes):00}");
+        if(showSeconds)
+            sb.Append($":{Math.Abs(TimeOnClock.Seconds):00}");
+        if(showMilliseconds)
+            sb.Append($".{Math.Abs(TimeOnClock.Milliseconds / 10):00}");
+
         return sb.ToString();
     }
 }

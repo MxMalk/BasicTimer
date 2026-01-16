@@ -20,6 +20,8 @@ namespace BasicTimer
         public string Text => Timer.ToString();
 
         public bool CountDown { get => !Timer.CountingUpward; set => Timer.CountingUpward = !value; }
+        public bool ShowSeconds { get => Timer.showSeconds; set => Timer.showSeconds = value; }
+        public bool ShowMilliseconds { get => Timer.showMilliseconds; set => Timer.showMilliseconds = value; }
 
         public bool BeepOnRollover { get; set; } = false;
 

@@ -155,6 +155,21 @@
                         <MenuItem Header="48" Click="MenuItem_FontSize_Click" Tag="48"/>
                         <MenuItem Header="96" Click="MenuItem_FontSize_Click" Tag="96"/>
                     </MenuItem>
+
+                    <MenuItem Header="Show Seconds">
+                        <MenuItem.Icon>
+                            <Label 
+                                Content=":00"
+                                Foreground="Navy"
+                                Margin="0" 
+                                Padding="0" 
+                                HorizontalContentAlignment="Center" 
+                                VerticalContentAlignment="Center"/>
+                        </MenuItem.Icon>
+                        <MenuItem Header="Seconds" IsCheckable="True" IsChecked="{Binding ShowSeconds}" Tag="seconds"/>
+                        <MenuItem Header="Milliseconds" IsCheckable="True" IsChecked="{Binding ShowMilliseconds}" Tag="milliseconds"/>
+                    </MenuItem>
+
                     <MenuItem Header="Progress Unit Size">
                         <MenuItem.Icon>
                             <Label 
